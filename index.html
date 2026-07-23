@@ -1,0 +1,507 @@
+<!DOCTYPE html><html lang="en" style="scroll-behavior: smooth;"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>CHIKA BAN BAN - Bursting with Fruit Flavor!</title>
+<!-- Tailwind CSS v3 CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Inter for a clean, modern look -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&amp;display=swap" rel="stylesheet">
+<style data-purpose="custom-theme">
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      background-color: #0a0a0a;
+      color: #ffffff;
+      font-family: 'Inter', sans-serif;
+    }
+    .neon-glow {
+      text-shadow: 0 0 10px rgba(255, 0, 255, 0.5), 0 0 20px rgba(255, 0, 255, 0.3);
+    }
+    .hover-pop {
+      transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    .hover-pop:hover {
+      transform: scale(1.03);
+    }
+    .hover-zoom img {
+      transition: transform 0.5s ease;
+    }
+    .hover-zoom:hover img {
+      transform: scale(1.08);
+    }
+    .benefit-card {
+      background: #121212;
+      border: 1px solid #222;
+      transition: all 0.3s ease;
+    }
+    .benefit-card:hover {
+      border-color: #ff00ff;
+      box-shadow: 0 0 15px rgba(255, 0, 255, 0.2);
+    }
+    .flavor-card {
+      background: #1a1a1a;
+      border-radius: 1rem;
+      overflow: hidden;
+    }
+    .btn-outline {
+      border: 2px solid white;
+      transition: all 0.3s ease;
+    }
+    .btn-outline:hover {
+      background: white;
+      color: black;
+    }
+    .review-card {
+      background: #111;
+      border: 1px solid #333;
+      transition: box-shadow 0.3s ease;
+    }
+    .review-card:hover {
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+    }
+  </style>
+</head>
+<body class="overflow-x-hidden">
+<!-- BEGIN: Navigation -->
+<nav class="fixed top-0 w-full z-50 bg-black/90 backdrop-blur-md border-b border-white/10 px-4 sm:px-6 py-4">
+<div class="max-w-7xl mx-auto flex justify-between items-center">
+<a href="#hero" class="text-xl sm:text-2xl font-black tracking-tighter uppercase text-white">CHIKA BAN BAN</a>
+
+<!-- Desktop Nav -->
+<div class="hidden md:flex space-x-8 text-sm font-bold uppercase tracking-widest text-gray-400">
+<a class="hover:text-white transition-colors" href="#flavors">Flavors</a>
+<a class="hover:text-white transition-colors" href="#about">About</a>
+<a class="hover:text-white transition-colors" href="#how-to-mix">How to Mix</a>
+<a class="hover:text-white transition-colors" href="#reviews">Reviews</a>
+</div>
+
+<!-- Mobile Hamburger Button -->
+<button id="mobile-menu-btn" type="button" aria-label="Toggle navigation menu" class="md:hidden p-2 text-gray-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-pink-500 rounded-lg">
+<svg id="hamburger-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+</svg>
+<svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+</svg>
+</button>
+</div>
+
+<!-- Mobile Menu Drawer -->
+<div id="mobile-menu" class="hidden md:hidden px-2 pt-4 pb-6 border-t border-white/10 mt-3 space-y-2 bg-black/95 rounded-b-2xl">
+<a class="mobile-nav-link block py-3 px-4 text-base font-bold uppercase tracking-widest text-gray-300 hover:text-white hover:bg-white/10 rounded-xl transition-colors" href="#flavors">Flavors</a>
+<a class="mobile-nav-link block py-3 px-4 text-base font-bold uppercase tracking-widest text-gray-300 hover:text-white hover:bg-white/10 rounded-xl transition-colors" href="#about">About</a>
+<a class="mobile-nav-link block py-3 px-4 text-base font-bold uppercase tracking-widest text-gray-300 hover:text-white hover:bg-white/10 rounded-xl transition-colors" href="#how-to-mix">How to Mix</a>
+<a class="mobile-nav-link block py-3 px-4 text-base font-bold uppercase tracking-widest text-gray-300 hover:text-white hover:bg-white/10 rounded-xl transition-colors" href="#reviews">Reviews</a>
+</div>
+</nav>
+<!-- END: Navigation -->
+
+<!-- BEGIN: HeroSection -->
+<section class="relative min-h-screen flex items-center justify-center pt-24 pb-12 sm:pt-28 overflow-hidden" id="hero">
+<!-- Gradient Blobs for background texture -->
+<div class="absolute top-1/4 left-1/4 w-72 sm:w-96 h-72 sm:h-96 bg-purple-600/20 rounded-full blur-[100px] sm:blur-[120px]"></div>
+<div class="absolute bottom-1/4 right-1/4 w-72 sm:w-96 h-72 sm:h-96 bg-pink-600/10 rounded-full blur-[100px] sm:blur-[120px]"></div>
+<div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
+<!-- Product Logo (Centered, Responsive, Transparent PNG) -->
+<div class="flex justify-center mb-4 sm:mb-6">
+<img id="hero-logo" src="logo_transparent.png" alt="CHIKA BAN BAN Logo" class="w-64 sm:w-80 md:w-[520px] max-w-full h-auto object-contain filter drop-shadow-[0_15px_35px_rgba(255,0,128,0.25)] hover:scale-105 transition-all duration-300" style="will-change: opacity, transform; transition: opacity 0.2s ease-out, transform 0.2s ease-out;" />
+</div>
+<h1 class="text-3xl sm:text-5xl md:text-7xl font-black mb-4 sm:mb-6 leading-tight">
+        Bursting with <span class="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500 neon-glow">Fruit Flavor!</span>
+</h1>
+<p class="text-gray-400 text-base sm:text-lg md:text-xl mb-8 sm:mb-10 max-w-2xl mx-auto leading-relaxed">
+        Experience the high-energy, refreshing essence of our vibrant powdered juice. One tiny packet, a massive splash of fun for the whole family.
+      </p>
+<a class="inline-block px-8 sm:px-10 py-3.5 sm:py-4 text-xs font-black tracking-[0.2em] uppercase bg-white text-black hover:bg-gray-200 transition-colors rounded-full sm:rounded-none" href="#flavors">
+        SEE FLAVORS
+      </a>
+</div>
+</section>
+<!-- END: HeroSection -->
+
+<!-- BEGIN: BenefitsSection -->
+<section class="py-12 sm:py-16 md:py-24 px-4 sm:px-6">
+<div class="max-w-7xl mx-auto">
+<h2 class="text-center text-2xl sm:text-3xl md:text-4xl font-bold mb-10 sm:mb-16">Why Choose CHIKA BAN BAN</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+<!-- Benefit 1 -->
+<div class="benefit-card p-6 sm:p-8 md:p-10 text-center rounded-2xl group shadow-xl duration-500 hover:scale-105 hover:-translate-y-2 md:hover:-translate-y-4">
+<div class="w-14 sm:w-16 h-14 sm:h-16 bg-lime-400 rounded-full flex items-center justify-center mx-auto mb-5 sm:mb-6 group-hover:scale-110 transition-transform">
+<svg class="w-7 sm:w-8 h-7 sm:h-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</div>
+<h3 class="text-lg sm:text-xl font-bold mb-3 sm:mb-4">5g makes 2L</h3>
+<p class="text-gray-400 text-sm sm:text-base leading-relaxed">One tiny 5g packet effortlessly makes a massive 2 liters of refreshing juice. Maximum efficiency for your hydration.</p>
+</div>
+<!-- Benefit 2 -->
+<div class="benefit-card p-6 sm:p-8 md:p-10 text-center rounded-2xl group shadow-xl duration-500 hover:scale-105 hover:-translate-y-2 md:hover:-translate-y-4">
+<div class="w-14 sm:w-16 h-14 sm:h-16 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-5 sm:mb-6 group-hover:scale-110 transition-transform">
+<svg class="w-7 sm:w-8 h-7 sm:h-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</div>
+<h3 class="text-lg sm:text-xl font-bold mb-3 sm:mb-4">Sugar Free</h3>
+<p class="text-gray-400 text-sm sm:text-base leading-relaxed">All the flavor you love, with zero sugar for a guilt-free splash. The perfect healthy choice for everyone.</p>
+</div>
+<!-- Benefit 3 -->
+<div class="benefit-card p-6 sm:p-8 md:p-10 text-center rounded-2xl group shadow-xl duration-500 hover:scale-105 hover:-translate-y-2 md:hover:-translate-y-4">
+<div class="w-14 sm:w-16 h-14 sm:h-16 bg-orange-400 rounded-full flex items-center justify-center mx-auto mb-5 sm:mb-6 group-hover:scale-110 transition-transform">
+<svg class="w-7 sm:w-8 h-7 sm:h-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</div>
+<h3 class="text-lg sm:text-xl font-bold mb-3 sm:mb-4">Boosting Flavor</h3>
+<p class="text-gray-400 text-sm sm:text-base leading-relaxed">Intense, natural-tasting fruit flavors that refresh your senses and provide an intense, unforgettable taste experience.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- END: BenefitsSection -->
+
+<!-- BEGIN: FlavorGridSection -->
+<section class="py-12 sm:py-16 md:py-24 bg-neutral-900/30" id="flavors">
+<div class="max-w-7xl mx-auto px-4 sm:px-6">
+<div class="text-center mb-10 sm:mb-16">
+<span class="text-[10px] tracking-[0.4em] uppercase text-gray-500 border border-gray-700 px-4 py-1 rounded-full">Our Flavors</span>
+<h2 class="text-3xl sm:text-4xl md:text-5xl font-black mt-4 sm:mt-6 mb-3 sm:mb-4">A Rainbow of Refreshment</h2>
+<p class="text-gray-400 text-sm sm:text-base max-w-xl mx-auto">Discover all six vibrant flavors. Each carefully crafted to deliver a sweet, squishy, sensory explosion.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+<!-- Mango -->
+<div class="flavor-card hover-zoom cursor-pointer group duration-500 hover:scale-105 md:hover:scale-110">
+<div class="aspect-video bg-[#3d3311] overflow-hidden">
+<img alt="Mango" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxiSRJY-iqo3ME8KYqj3IiKQfGSgmwglyrBQ9_drKC_jsJa5p-Y8mW-Dx63RQkRifGndRxjJQjQQUB_go2mN8zmR8uRuJr4h0x9zfVGocWZi2ezmh3BdYs5z3oT121RnEB5YBRcZkEv_PMZrK6BIspgvYpDrvwF_3HPnYRbDYdpFJXgk-wNdbb6B24B1SMZXLIab0oPdLttx5zbfDedThRBbgwGaCDlBo9K0rlKbL_RL0RwOL53KUT2b9w6V0a_WKyqFo">
+</div>
+<div class="p-6 sm:p-8 text-center bg-black/40">
+<h4 class="text-lg sm:text-xl font-bold text-orange-400 mb-2">Mango Manga</h4>
+<p class="text-xs sm:text-sm text-gray-500">Tropical, sweet, and incredibly juicy.</p>
+</div>
+</div>
+<!-- Mix Fruit -->
+<div class="flavor-card hover-zoom cursor-pointer group duration-500 hover:scale-105 md:hover:scale-110">
+<div class="aspect-video bg-[#411425] overflow-hidden">
+<img alt="Mix Fruit Misture de Frutas" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyHEMzTH9w_ENopqemFFkVZg7p1kS3Egb6fBJQOq7PkvWBJrk8XMeUs-LroNTHxYqCJQo2mdgGh8QIAP42on4Q6CDGLUawpNjbLpSaSUr-cZ2IW6GqfiWrUQZT-Pkf9E0ipjIcEpRObwk4GS3c0L3yIMaItTf-yO736saNClQhs_y-_wJd3CYGQQjbqv1fDaYgj1zPyWlAzL18rWoyFVcfx4QZjgy55ueLeUYQ2tVGXMH_dx6zoc2EyaLnRPtPVKJ2jmA">
+</div>
+<div class="p-6 sm:p-8 text-center bg-black/40">
+<h4 class="text-lg sm:text-xl font-bold text-pink-500 mb-2">Mix Fruit Misture de Frutas</h4>
+<p class="text-xs sm:text-sm text-gray-500">A perfect blend of summer favorites.</p>
+</div>
+</div>
+<!-- Grapes -->
+<div class="flavor-card hover-zoom cursor-pointer group duration-500 hover:scale-105 md:hover:scale-110">
+<div class="aspect-video bg-[#2a133d] overflow-hidden">
+<img alt="Grapes" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAdW6ZzkrkBn76UZQd_qIsFkMWWhRr7bd9MR9RHU0uS3dxhJgUNEGmwUjS58hz2C4JzSc1BWq3mUJNEC7KApYqVDrEG5jORPkwAfJ5-qNB3J2iXjEefoX_pzuCKYZoD7WA1VpFmVexKx5zeP81KX-O8B7Iohv1uCUtepg8tBAKNwdyFApBFyMCLCZ5qgWaKOw74_j1mXNTsQhpdN7jzfuTeGUILnAQYkLvgZ8e-5mhb-njmddisLr0tuIGim4JgbdpQwI">
+</div>
+<div class="p-6 sm:p-8 text-center bg-black/40">
+<h4 class="text-lg sm:text-xl font-bold text-purple-500 mb-2">Grapes Uva</h4>
+<p class="text-xs sm:text-sm text-gray-500">Deep, rich, and refreshingly bold.</p>
+</div>
+</div>
+<!-- Lemon -->
+<div class="flavor-card hover-zoom cursor-pointer group duration-500 hover:scale-105 md:hover:scale-110">
+<div class="aspect-video bg-[#3d3d11] overflow-hidden">
+<img alt="Lemon" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDm-jEJyDAM_LtUHog2EkLQr0k2bNBy8bHnq3bKAGknWfhvbjFztS-OW_v-MRcxUO_G2zABbHHdgA15sQNt9z1fgEOQx7S_AMjqt-oXNayPAIaX5K6ZQ1GCvWcVUapT6vvmauQT2YRVMWxqdtFuTM0tpwgn37n9QUpSGE-hbpQkzZs95IbbnCkcdqJm6dhT0oMsYRpj30Zy59gVYc_WnGCGXXOumSsgFvr-eCxKwitv8FNr7bawVQDWcZpFZB0kfHKYp1c">
+</div>
+<div class="p-6 sm:p-8 text-center bg-black/40">
+<h4 class="text-lg sm:text-xl font-bold text-yellow-400 mb-2">Lemon Limão</h4>
+<p class="text-xs sm:text-sm text-gray-500">Zesty, tangy, and super crisp.</p>
+</div>
+</div>
+<!-- Pineapple -->
+<div class="flavor-card hover-zoom cursor-pointer group duration-500 hover:scale-105 md:hover:scale-110">
+<div class="aspect-video bg-[#113d23] overflow-hidden">
+<img alt="Pineapple" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuANWGfoHiGPwKYRbt2XeXSBfPmUf_IRBb3CiTXD-q_kj2zFFq5ESWClTDfX0-DhxSDQ4kRA01h9nSATdzsPwprvyMsmWgYdKIO6t7_b7Z_CTMI8OeUtst4uyY4eZhnhPB-kSjUZyXaqXYPCfPU1s27JP6uNs4vspZ40C8_LNH4GDxlviRVYWXNR5LUytahmM3843vFbF9jH20fmMUpIrPyDZ7z4WkYygrJhaikcDbdRbD7Glxxh2Z7rUGe9j5slq1hBnA4">
+</div>
+<div class="p-6 sm:p-8 text-center bg-black/40">
+<h4 class="text-lg sm:text-xl font-bold text-lime-400 mb-2">Pineapple Ananas</h4>
+<p class="text-xs sm:text-sm text-gray-500">Sweet, tart, island vibes.</p>
+</div>
+</div>
+<!-- Orange -->
+<div class="flavor-card hover-zoom cursor-pointer group duration-500 hover:scale-105 md:hover:scale-110">
+<div class="aspect-video bg-[#3d2311] overflow-hidden">
+<img alt="Orange" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1eVcpE9O5My7WeyH1f04vgUaBpw9vGs7oafRrm1w9Y9But8iScgRA2B4TWj1zDoiR5I_KW_hVvleFojND2oky2VmNQ9OviRUFyks7IZ6a-dSijtU09n7NwS6qly_FXMt2J02qzukD1o1te5p821HRJM6BrEePyynAepbqvhCFemE94MmRR-_s_8wKKTZ_6V_LmQvIg1NKV2Nb1GKOxQx3Eha9brpTRunPhT38OQcXK7t5KxVcAstrLPwmy0cuYAf6W18">
+</div>
+<div class="p-6 sm:p-8 text-center bg-black/40">
+<h4 class="text-lg sm:text-xl font-bold text-orange-500 mb-2">Orange Laranja</h4>
+<p class="text-xs sm:text-sm text-gray-500">Classic, sunny, citrus perfection.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: FlavorGridSection -->
+
+<!-- BEGIN: RefreshmentAnywhereSection -->
+<section class="py-12 sm:py-16 md:py-24 px-4 sm:px-6 bg-black">
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-10 sm:mb-16">
+<h2 class="text-3xl sm:text-4xl font-black mb-3 sm:mb-4">Refreshment Anywhere</h2>
+<p class="text-gray-400 text-sm sm:text-base max-w-xl mx-auto">From the beach to the streets, Chika Ban Ban brings the flavor to your favorite moments.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="relative rounded-3xl overflow-hidden group">
+<img alt="Share with Friends" class="w-full h-[300px] sm:h-[420px] md:h-[550px] object-cover transition-transform duration-700 group-hover:scale-105 md:group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1sVH9s5iB9rCzOylG2fT-rRmmuG5PjJ_h0dMfYtvEwDN31soyNeJIIiphfc76yEpy5zdVEKvVectNVvxzMQ_tnddLL5DE1wTNNhVUZI9jN8sAD76hCXc2H-nb2xB9oZ0SntyIfaNxOekck1uGS9ajNWpp9CK4IZ416ICmMYawgGtO5tT52J2NA5wohrJhIomsOPWE9zvnGUl8_qOsRCwCRd53l3a0OuQyMjf4w7v1ITPQy5nm4YAJ_vhtYieiQ99zQrc">
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent flex flex-col justify-end p-6 sm:p-8 md:p-12">
+<h3 class="text-2xl sm:text-3xl font-bold mb-2">Share with Friends</h3>
+<p class="text-gray-300 text-xs sm:text-base">Perfect for community gatherings and sunny days out.</p>
+</div>
+</div>
+<div class="relative rounded-3xl overflow-hidden group">
+<img alt="Enjoy the Sunshine" class="w-full h-[300px] sm:h-[420px] md:h-[550px] object-cover transition-transform duration-700 group-hover:scale-105 md:group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqIWrov01X_SPCmfCeHMIM_pl8JYaFMyS9Y1OxQ1giHWsOGlKw2SQklNqFlx6Ng09UkQbGn1Go67cVugZUKGTgGIOauZWUVkisSMPn-r2-TUPpdxsva7QJDel7ZkKOiO8mUI9dMAYxrWebL7GutOMXAnd5QOQGSp7NN-aiYkrazdBYy2Z3r5eve_ov-txp16nKRUDkC7GwMeWuNE-BWz5Xf9jXVoQ8QSPcujG12zTgmEGi5R5Qz5pFZXhm5U6Cr5-MOY8">
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent flex flex-col justify-end p-6 sm:p-8 md:p-12">
+<h3 class="text-2xl sm:text-3xl font-bold mb-2">Enjoy the Sunshine</h3>
+<p class="text-gray-300 text-xs sm:text-base">Take a refreshing break wherever your adventures take you.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: RefreshmentAnywhereSection -->
+
+<!-- BEGIN: SplashSection -->
+<section class="py-12 sm:py-16 md:py-24 px-4 sm:px-6 bg-[#0a0a0a]">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-8 md:gap-16">
+<div class="w-full md:w-1/2 rounded-3xl overflow-hidden hover-pop">
+<img alt="Massive Splash Illustration" class="w-full shadow-2xl transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDQmuiwIilNr8G01Q6BpvAiWPN-K9Jqy81Jq600i5MO1VnGxpdPpI9HCLY3qVVfokG6Gs_1VB4mbQsUGCL4lR9HchCMCTvH1Q6Y5TdvIz3WrjzqHElhIpnUtCdyPSYh_bx56CxAV-qxWrxC7Tp6ONRgUGVhbceDssg9EQNw1DDV7_ZT3yzKy_5PxKc3DN0jO4iNLb80J62jC5941tmsLV4Pr1NWDxbLkIvHugnnEu8GO9Vuu2VxoxUjkjIWwrZCe2G4IU">
+</div>
+<div class="w-full md:w-1/2">
+<h2 class="text-3xl sm:text-4xl md:text-5xl font-black leading-tight mb-6 sm:mb-8">Small Packet,<br>Massive Splash.</h2>
+<p class="text-gray-400 text-base sm:text-lg mb-8 sm:mb-10 leading-relaxed">
+          We believe that big fun shouldn't take up big space. Our concentrated drink mix is engineered to deliver maximum fruit flavor with minimal packaging.
+        </p>
+<div class="space-y-6">
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 bg-lime-400 rounded-full flex-shrink-0 flex items-center justify-center text-black font-bold text-xs">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</div>
+<div>
+<h4 class="font-bold uppercase text-xs tracking-widest mb-1 text-white">Just Add Water</h4>
+<p class="text-xs sm:text-sm text-gray-400">One tiny 5g packet effortlessly transforms 2 liters of water into a refreshing oasis.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 bg-purple-500 rounded-full flex-shrink-0 flex items-center justify-center text-black font-bold text-xs">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</div>
+<div>
+<h4 class="font-bold uppercase text-xs tracking-widest mb-1 text-white">Family Fun</h4>
+<p class="text-xs sm:text-sm text-gray-400">Perfect for pitchers, parties, and daily hydration with a twist of excitement.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: SplashSection -->
+
+<!-- BEGIN: StepsSection -->
+<section class="py-12 sm:py-16 md:py-24 px-4 sm:px-6 bg-black relative" id="how-to-mix">
+<div class="max-w-5xl mx-auto text-center">
+<h2 class="text-3xl sm:text-4xl font-black mb-10 sm:mb-16">Mix &amp; Enjoy in 3 Steps</h2>
+<div class="relative flex flex-col md:flex-row justify-between items-center space-y-12 md:space-y-0 gap-6 md:gap-0">
+<!-- Connecting Line (Desktop) -->
+<div class="absolute top-1/2 left-0 w-full h-[1px] bg-white/20 -translate-y-1/2 hidden md:block"></div>
+<!-- Step 1 -->
+<div class="relative z-10 w-full md:w-1/3 px-4 group">
+<div class="w-16 h-16 bg-[#111] border border-white/20 rounded-2xl flex items-center justify-center mx-auto mb-6 sm:mb-8 group-hover:border-white transition-colors">
+<span class="absolute -top-3 -right-3 w-8 h-8 bg-black border border-white/20 rounded-full flex items-center justify-center text-xs font-bold">1</span>
+<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a2 2 0 00-1.96 1.414l-.477 2.387a2 2 0 00.547 1.022l1.428 1.428a2 2 0 002.828 0l1.428-1.428a2 2 0 000-2.828l-1.428-1.428z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><path d="M3 13.5V19a2 2 0 002 2h14a2 2 0 002-2v-5.5M17 13.5a2 2 0 01-2 2H9a2 2 0 01-2-2m10 0V7a2 2 0 00-2-2H9a2 2 0 00-2 2v6.5m10 0V3a2 2 0 00-2-2H9a2 2 0 00-2 2v10.5" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</div>
+<h4 class="text-lg sm:text-xl font-bold mb-2">Pour</h4>
+<p class="text-gray-400 text-xs sm:text-sm">Empty one 5g packet into a 2L pitcher.</p>
+</div>
+<!-- Step 2 -->
+<div class="relative z-10 w-full md:w-1/3 px-4 group">
+<div class="w-16 h-16 bg-[#111] border border-white/20 rounded-2xl flex items-center justify-center mx-auto mb-6 sm:mb-8 group-hover:border-white transition-colors">
+<span class="absolute -top-3 -right-3 w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center text-xs font-bold">2</span>
+<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a2 2 0 00-1.96 1.414l-.477 2.387a2 2 0 00.547 1.022l1.428 1.428a2 2 0 002.828 0l1.428-1.428a2 2 0 000-2.828l-1.428-1.428z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</div>
+<h4 class="text-lg sm:text-xl font-bold mb-2">Mix</h4>
+<p class="text-gray-400 text-xs sm:text-sm">Add 2 liters of cold water and stir well.</p>
+</div>
+<!-- Step 3 -->
+<div class="relative z-10 w-full md:w-1/3 px-4 group">
+<div class="w-16 h-16 bg-[#111] border border-white/20 rounded-2xl flex items-center justify-center mx-auto mb-6 sm:mb-8 group-hover:border-white transition-colors">
+<span class="absolute -top-3 -right-3 w-8 h-8 bg-black border border-white/20 rounded-full flex items-center justify-center text-xs font-bold">3</span>
+<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</div>
+<h4 class="text-lg sm:text-xl font-bold mb-2">Refresh</h4>
+<p class="text-gray-400 text-xs sm:text-sm">Serve over ice and enjoy the splash!</p>
+</div>
+</div>
+</div>
+</section>
+<!-- END: StepsSection -->
+
+<!-- BEGIN: OurStorySection -->
+<section class="py-12 sm:py-16 md:py-24 px-4 sm:px-6 bg-neutral-900/40" id="about">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-8 md:gap-16">
+<div class="w-full md:w-1/2 overflow-hidden">
+<img alt="Friends Enjoying Drinks" class="rounded-3xl shadow-xl w-full object-cover aspect-square md:aspect-auto h-[300px] sm:h-[400px] md:h-[500px] transition-transform duration-700 hover:scale-105" src="https://lh3.googleusercontent.com/aida/AP1WRLutakZOxdwdighu2kzFvqzzuxCKSlGndhOT_Ci3vxHjzhudOaRpqk_CToOJw1UBaIsiZrv1tvtKz4vQ-DVPRYYRl3w32cCWxz_PfaaV7jOA7klz4NmN8w0P7BBHoie6mnn7KioH_7il70tp0RwXpqf0GIHlJ7gcHTghGHubCw9eQ4fjGYPoyEkqjALUpCbRKjpb1k-4VMEsOynjVf7jAqFRa518bjSAewT8L7o2iFxIRA_Odlf2l710xEg6">
+</div>
+<div class="w-full md:w-1/2">
+<span class="text-lime-400 text-[10px] uppercase tracking-widest font-black">Our Journey</span>
+<h2 class="text-3xl sm:text-4xl md:text-5xl font-black mt-3 sm:mt-4 mb-6 sm:mb-8">Our Story</h2>
+<div class="space-y-4 sm:space-y-6 text-gray-400 text-sm sm:text-base leading-relaxed">
+<p>
+            CHIKA BAN BAN was born from a simple realization: the biggest joys often come in the smallest packages. We started with a mission to revolutionize how families hydrate, stripping away the bulk of traditional juices to focus on what truly matters—pure, explosive fruit flavor.
+          </p>
+<p>
+            Our journey began in a small kitchen, experimenting with natural essences to create a concentrate that didn't just taste like fruit, but felt like a celebration. We wanted something that could travel from the beach to the backyard without the weight of heavy bottles.
+          </p>
+<p>
+            Today, we're proud to bring that massive splash of fun to homes everywhere. One tiny 5g packet at a time, we're proving that you don't need a lot of space to make a huge impact on your day.
+          </p>
+</div>
+</div>
+</div>
+</section>
+<!-- END: OurStorySection -->
+
+<!-- BEGIN: TestimonialsSection -->
+<section class="py-12 sm:py-16 md:py-24 px-4 sm:px-6" id="reviews">
+<div class="max-w-7xl mx-auto">
+<h2 class="text-center text-3xl sm:text-4xl font-black mb-10 sm:mb-16">What Our Fans Are Saying</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+<!-- Review 1 -->
+<div class="review-card p-6 sm:p-8 md:p-10 rounded-2xl hover:border-pink-500 duration-500 hover:scale-105 neon-glow">
+<div class="flex text-yellow-500 mb-4 sm:mb-6">
+<span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+</div>
+<p class="text-gray-400 text-sm sm:text-base italic mb-6 sm:mb-10 leading-relaxed">
+            "The flavor is absolutely explosive! I can't believe it's sugar-free. My kids ask for it every single day!"
+          </p>
+<div class="text-xs font-black uppercase tracking-widest text-white border-t border-white/10 pt-4 sm:pt-6">
+            — Sarah M.
+          </div>
+</div>
+<!-- Review 2 -->
+<div class="review-card p-6 sm:p-8 md:p-10 rounded-2xl hover:border-pink-500 duration-500 hover:scale-105 neon-glow">
+<div class="flex text-pink-500 mb-4 sm:mb-6">
+<span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+</div>
+<p class="text-gray-400 text-sm sm:text-base italic mb-6 sm:mb-10 leading-relaxed">
+            "Perfect for our beach trips. So easy to carry and the Mango Manga flavor is like a tropical vacation in a glass."
+          </p>
+<div class="text-xs font-black uppercase tracking-widest text-white border-t border-white/10 pt-4 sm:pt-6">
+            — David K.
+          </div>
+</div>
+<!-- Review 3 -->
+<div class="review-card p-6 sm:p-8 md:p-10 rounded-2xl hover:border-pink-500 duration-500 hover:scale-105 neon-glow">
+<div class="flex text-purple-500 mb-4 sm:mb-6">
+<span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+</div>
+<p class="text-gray-400 text-sm sm:text-base italic mb-6 sm:mb-10 leading-relaxed">
+            "I've tried every flavor and Grapes Uva is the winner. It's so refreshing and the 2L yield is incredible value!"
+          </p>
+<div class="text-xs font-black uppercase tracking-widest text-white border-t border-white/10 pt-4 sm:pt-6">
+            — Jessica R.
+          </div>
+</div>
+</div>
+
+<!-- Facebook Social Link -->
+<div class="mt-12 sm:mt-16 text-center flex flex-col items-center justify-center gap-4 border-t border-white/10 pt-8 sm:pt-12">
+<p class="text-xs font-bold uppercase tracking-[0.2em] text-gray-400">Join our community on Facebook</p>
+<a href="https://www.facebook.com/share/1brvoM9xz4/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 px-6 sm:px-8 py-3.5 rounded-full bg-[#1877F2] text-white font-bold hover:bg-blue-600 hover:scale-105 transition-all duration-300 shadow-xl shadow-blue-600/30 group" aria-label="Facebook Page">
+<svg class="w-5 sm:w-6 h-5 sm:h-6 fill-current group-hover:rotate-12 transition-transform duration-300" viewBox="0 0 24 24">
+<path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path>
+</svg>
+<span class="text-xs sm:text-sm font-extrabold uppercase tracking-wider">Follow Us On Facebook</span>
+</a>
+</div>
+</div>
+</section>
+<!-- END: TestimonialsSection -->
+
+<!-- BEGIN: Footer -->
+<footer class="bg-black py-12 sm:py-20 px-4 sm:px-6 border-t border-white/5">
+<div class="max-w-7xl mx-auto text-center">
+<div class="bg-gradient-to-r from-lime-200 via-yellow-100 to-lime-200 py-6 sm:py-10 px-4 mb-8 sm:mb-12 rounded-2xl">
+<h2 class="text-black text-2xl sm:text-4xl md:text-5xl font-black tracking-tighter uppercase">CHIKA BAN BAN</h2>
+</div>
+<div class="flex flex-wrap justify-center gap-4 sm:gap-8 mb-6 sm:mb-8 text-[10px] font-bold uppercase tracking-[0.2em] sm:tracking-[0.3em] text-gray-500">
+<a class="hover:text-white transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-white transition-colors" href="#">Terms of Service</a>
+<a class="hover:text-white transition-colors" href="#">Contact Us</a>
+<a class="hover:text-white transition-colors" href="#">Wholesale</a>
+</div>
+<p class="text-gray-600 text-xs">© 2024 CHIKA BAN BAN. Bursting with flavor in every sip!</p>
+</div>
+</footer>
+<!-- END: Footer -->
+
+<script>
+  (function() {
+    // Mobile Menu Toggle
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const hamburgerIcon = document.getElementById('hamburger-icon');
+    const closeIcon = document.getElementById('close-icon');
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+    function closeMobileMenu() {
+      if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+        mobileMenu.classList.add('hidden');
+        hamburgerIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+      }
+    }
+
+    if (menuBtn && mobileMenu) {
+      menuBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        const isHidden = mobileMenu.classList.contains('hidden');
+        if (isHidden) {
+          mobileMenu.classList.remove('hidden');
+          hamburgerIcon.classList.add('hidden');
+          closeIcon.classList.remove('hidden');
+        } else {
+          closeMobileMenu();
+        }
+      });
+
+      mobileNavLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          closeMobileMenu();
+        });
+      });
+
+      // Close mobile menu when clicking anywhere on the website outside the navbar
+      document.addEventListener('click', function(e) {
+        const nav = document.querySelector('nav');
+        if (nav && !nav.contains(e.target)) {
+          closeMobileMenu();
+        }
+      });
+    }
+
+    // Hero Logo Scroll Effect
+    function handleScroll() {
+      const logo = document.getElementById('hero-logo');
+      if (!logo) return;
+      
+      const totalScrollable = document.documentElement.scrollHeight - window.innerHeight;
+      if (totalScrollable <= 0) return;
+      
+      const scrollPercent = (window.scrollY / totalScrollable) * 100;
+      
+      if (scrollPercent >= 5) {
+        logo.style.opacity = '0';
+        logo.style.pointerEvents = 'none';
+        logo.style.transform = 'scale(0.9) translateY(-20px)';
+      } else {
+        const opacity = 1 - (scrollPercent / 5);
+        const scale = 1 - (0.08 * (scrollPercent / 5));
+        const translateY = -20 * (scrollPercent / 5);
+        logo.style.opacity = opacity.toFixed(3);
+        logo.style.pointerEvents = 'auto';
+        logo.style.transform = `scale(${scale.toFixed(3)}) translateY(${translateY.toFixed(1)}px)`;
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('resize', handleScroll, { passive: true });
+    handleScroll();
+  })();
+</script>
+
+</body></html>
